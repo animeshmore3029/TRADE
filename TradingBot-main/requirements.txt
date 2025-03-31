@@ -1,0 +1,7 @@
+mistune
+yfinance
+pandas
+mplfinance
+scipy
+google-generativeai
+python-dotenv
