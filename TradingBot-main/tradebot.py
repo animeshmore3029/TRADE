@@ -130,7 +130,17 @@ class GeminiMarketAnalyzer:
 
 if __name__ == "__main__":
     # Example usage:
-    file_paths = ['C:\\Users\\JAGRUTI\\Downloads\\gen-ai\\output_market_analysis\\NZD-USD\\NZD-USD_3mo_1d_processed.json', 'C:\\Users\\JAGRUTI\\Downloads\\gen-ai\\output_market_analysis\\NZD-USD\\NZD-USD_6mo_1wk_processed.json', 'C:\\Users\\JAGRUTI\\Downloads\\gen-ai\\output_market_analysis\\NZD-USD\\NZD-USD_5d_1h_processed.json', 'C:\\Users\\JAGRUTI\\Downloads\\gen-ai\\output_market_analysis\\NZD-USD\\NZD-USD_3mo_1d_chart.png', 'C:\\Users\\JAGRUTI\\Downloads\\gen-ai\\output_market_analysis\\NZD-USD\\NZD-USD_6mo_1wk_chart.png', 'C:\\Users\\JAGRUTI\\Downloads\\gen-ai\\output_market_analysis\\NZD-USD\\NZD-USD_5d_1h_chart.png']
+
+# Dynamically resolve paths
+    base_dir = os.path.join(os.path.expanduser("~"), "Downloads", "gen-ai", "output_market_analysis", "NZD-USD")
+    file_paths = [
+        os.path.join(base_dir, "NZD-USD_3mo_1d_processed.json"),
+        os.path.join(base_dir, "NZD-USD_6mo_1wk_processed.json"),
+        os.path.join(base_dir, "NZD-USD_5d_1h_processed.json"),
+        os.path.join(base_dir, "NZD-USD_3mo_1d_chart.png"),
+        os.path.join(base_dir, "NZD-USD_6mo_1wk_chart.png"),
+        os.path.join(base_dir, "NZD-USD_5d_1h_chart.png"),
+    ]
 
     mime_types = [
         "text/plain",

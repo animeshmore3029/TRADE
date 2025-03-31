@@ -118,7 +118,19 @@ class PriceChannelAnalyzer:
 
 if __name__ == "__main__":
     # Example usage:
-    file_paths = [r'C:\\Users\\USER\\Downloads\\gen-ai\\output_market_analysis\\NZD-USD\\NZD-USD_3mo_1d_processed.json', r'C:\\Users\\USER\\Downloads\\gen-ai\\output_market_analysis\\NZD-USD\\NZD-USD_1y_1wk_processed.json', r'C:\\Users\\USER\\Downloads\\gen-ai\\output_market_analysis\\NZD-USD\\NZD-USD_5d_1h_processed.json', r'C:\\Users\\USER\\Downloads\\gen-ai\\output_market_analysis\\NZD-USD\\NZD-USD_3mo_1d_chart.png', r'C:\\Users\\USER\\Downloads\\gen-ai\\output_market_analysis\\NZD-USD\\NZD-USD_1y_1wk_chart.png', r'C:\\Users\\USER\\Downloads\\gen-ai\\output_market_analysis\\NZD-USD\\NZD-USD_5d_1h_chart.png']
+
+    # Dynamically construct the base directory
+    base_dir = os.path.join(os.path.expanduser("~"), "Downloads", "gen-ai", "output_market_analysis", "NZD-USD")
+
+    # Update the file paths dynamically
+    file_paths = [
+        os.path.join(base_dir, "NZD-USD_3mo_1d_processed.json"),
+        os.path.join(base_dir, "NZD-USD_1y_1wk_processed.json"),
+        os.path.join(base_dir, "NZD-USD_5d_1h_processed.json"),
+        os.path.join(base_dir, "NZD-USD_3mo_1d_chart.png"),
+        os.path.join(base_dir, "NZD-USD_1y_1wk_chart.png"),
+        os.path.join(base_dir, "NZD-USD_5d_1h_chart.png"),
+]
     
 
     mime_types = [

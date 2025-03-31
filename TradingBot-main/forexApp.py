@@ -9,15 +9,19 @@ import time
 from threading import Lock
 from concurrent.futures import ProcessPoolExecutor  # Changed import
 
-# Paths and constants
-results_file = r"C:\Users\JAGRUTI\Downloads\gen-ai\Forex-Analysis.md"
-price_channels_file = r"C:\Users\JAGRUTI\Downloads\gen-ai\price_channels.md"
-output_dir = r"C:\Users\JAGRUTI\Downloads\gen-ai\output_market_analysis"
+# Paths and constantsimport os
+
+# Dynamically resolve paths
+base_dir = os.path.join(os.path.expanduser("~"), "Downloads", "gen-ai")
+results_file = os.path.join(base_dir, "Forex-Analysis.md")
+price_channels_file = os.path.join(base_dir, "price_channels.md")
+output_dir = os.path.join(base_dir, "output_market_analysis")
 recipient = "animeshmore999@gmail.com"   
 sender = "animeshmore999@gmail.com"
 password = "anshu@3030"
 subject_line = "Daily Forex Analysis"
 attachments = [results_file]
+
 
 # Lock for thread-safe file access
 file_write_lock = Lock()
